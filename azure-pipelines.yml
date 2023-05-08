@@ -1,9 +1,11 @@
 # Starter pipeline
-# Run the pipeline every day at 07:00 am on sunday until thrusday
-# Only run on branches that contain the word 'dev' on a Linux system
-# step 1: The run should print "hello world"
-# step 2: Search for all files with the extension '.log'
-# If the word 'ERROR' is found in any of those files, print 'FAIL'
+# Run the pipeline every day at 07:00 am on sunday until thrusday.
+# Only run on branches that contain the word 'dev' on a Linux system.
+# step 1: The run should print "hello message".
+# step 2: Search for all files with the extension '.log'.
+# If the word 'ERROR' is found in any of those files, print 'FAIL'.
+# step 3: search for all the changed files. 
+# Prints the names of the files that will change or No changes.
 
 pool:
   vmImage: ubuntu-latest
