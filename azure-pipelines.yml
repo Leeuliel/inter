@@ -31,4 +31,6 @@ steps:
    last_commit=$(git rev-parse HEAD)
    changed_files=$(git diff --name-only $last_commit HEAD)
    echo "$changed_files"
+   branches=($(echo "$changed_files" | awk -F/ '{print $1}' | sort -u))
+   echo "$branches"
   displayName: 'List Changed files'
