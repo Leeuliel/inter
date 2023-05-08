@@ -6,15 +6,19 @@
 trigger:
   branches:
     include:
-      - "*dev*"
+      - main
 pool:
   vmImage: ubuntu-latest
 schedules:
   - cron: "0 7 * * 0-4"
-
+    displayName: 'Run in 7:00 am sun-thr'
+    branches:
+      include: 
+      - main
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
