@@ -16,7 +16,7 @@ schedules:
     displayName: Daily midnight build
     branches:
         include:
-          - "*dev*"
+          - main
 
 steps:
 - script: echo Hello, world!
