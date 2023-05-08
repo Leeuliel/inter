@@ -16,7 +16,7 @@ schedules:
       include: 
       - main
 steps:
-- script: echo Hello, world!
+- script: echo Hello, world! Have a good day
   displayName: 'Run a one-line script'
 - script: |
      error_output=$(grep -r ERROR *.log)
