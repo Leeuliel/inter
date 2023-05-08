@@ -6,7 +6,9 @@
 # If the word 'ERROR' is found in any of those files, print 'FAIL'
 
 trigger:
-- main
+  branches:
+    include:
+      - main
 
 pool:
   vmImage: ubuntu-latest
