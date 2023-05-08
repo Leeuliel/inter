@@ -30,12 +30,6 @@ steps:
    git fetch
    last_commit=$(git rev-parse HEAD)
    changed_files=$(git diff --name-only $last_commit HEAD
-   branches=($(echo "$changed_files" | awk -F/ '{print $1}' | sort -u))
-   echo "Changed branches:"
-    for branch in "${branches[@]}"; do
-      echo "- $branch"
+   echo "$changed_files"
     done
   displayName: 'List Changed Branches'
-
-
-
