@@ -26,6 +26,10 @@ steps:
       echo "FAIL"
       fi
   displayName: 'Check Error in logs file'
+- script:
+    python send_email.py
+  displayName: 'send email in every mornig'
+
 
 
 
