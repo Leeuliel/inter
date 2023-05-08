@@ -29,9 +29,10 @@ steps:
 - script: |
    last_commit=$(git rev-parse HEAD)
    changed_files=$(git diff --name-only $last_commit HEAD)
-   if [ -z "$changed_files"]; then 
+      if [ -z "$changed_files"]; then 
       echo "No Changes"
       else
       echo "Changed_files:"
       echo "$changed_files"
+      fi
   displayName: 'List Changed files'
