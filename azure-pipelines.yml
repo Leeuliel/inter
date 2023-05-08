@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+pool:
+  vmImage: ubuntu-latest
+schedules:
+  - cron: "0 7 * * 0-4"
+    displayName: 'Run in 7:00 am sun-thr'
+    branches:
+      include: 
+      - lee
+steps:
+- script: echo Hello, world! Have a good day
+  displayName: 'Run a one-line script'
+- script: |
+     error_output=$(grep -r ERROR *.log)
+      if [ -z "$error_output"]; then 
+      echo "PASS"
+      else
+      echo "FAIL"
+      fi
+  displayName: 'Check Error in logs file'
+- script: |
+   last_commit=$(git rev-parse HEAD)
+   changed_files=$(git diff --name-only $last_commit HEAD)
+      if [ -z "$changed_files"]; then 
+      echo "No Changes"
+      else
+      echo "Changed_files:"
+      echo "$changed_files"
+      fi
+  displayName: 'List Changed files'
