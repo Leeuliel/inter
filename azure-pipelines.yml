@@ -7,10 +7,8 @@ trigger:
   branches:
     include:
       - "*dev*"
-
 pool:
   vmImage: ubuntu-latest
-
 schedules:
   - cron: "0 7 * * 0-4"
     displayName: Daily midnight build
