@@ -19,8 +19,8 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 - script: |
-     lee=$(grep -r ERROR *.log)
-      if [ -z "$lee"]; then 
+     error_output=$(grep -r ERROR *.log)
+      if [ -z "$error_output"]; then 
       echo "PASS"
       else
       echo "FAIL"
