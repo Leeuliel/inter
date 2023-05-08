@@ -10,7 +10,7 @@ schedules:
     displayName: 'Run in 7:00 am sun-thr'
     branches:
       include: 
-      - lee
+      - main
 steps:
 - script: echo Hello, world! Have a good day
   displayName: 'Run a one-line script'
