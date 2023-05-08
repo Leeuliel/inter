@@ -6,19 +6,15 @@
 # If the word 'ERROR' is found in any of those files, print 'FAIL'
 
 trigger:
-  branches:
-    include:
-      - main
+  schedules:
+   - cron: "0 7 * * 0-4"
+   displayName: 'Run in 7:00 am sun-thr'
+      branches:
+        include: 
+        - main
 
 pool:
   vmImage: ubuntu-latest
-
-schedules:
-  - cron: "0 7 * * 0-4"
-    displayName: 'Run in 7:00 am sun-thr'
-    branches:
-      include: 
-      - main
 
 steps:
 - script: echo Hello, world! Have a good day
