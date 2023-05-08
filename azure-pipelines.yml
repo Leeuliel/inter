@@ -20,7 +20,6 @@ steps:
   displayName: 'Run a one-line script'
 - script: |
      error_output=$(grep -r ERROR *.log)
-     echo "$error_output"
       if [ -z "$error_output"]; then 
       echo "PASS"
       else
@@ -30,6 +29,6 @@ steps:
 - script: |
    git fetch
    last_commit=$(git rev-parse HEAD)
-   changed_files=$(git diff --name-only $last_commit HEAD
+   changed_files=$(git diff --name-only $last_commit HEAD)
    echo "$changed_files"
   displayName: 'List Changed files'
