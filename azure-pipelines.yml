@@ -30,5 +30,6 @@ steps:
    git fetch
    last_commit=$(git rev-parse HEAD)
    changed_files=$(git diff --name-only $last_commit HEAD)
+   echo "$changed_files:"
    echo "$changed_files"
   displayName: 'List Changed branches'
